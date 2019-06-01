@@ -2,11 +2,18 @@
 
 <div *ngIf="jogoEmAndamento; else fimDeJogo">
   <app-painel (encerrarJogo)="encerrarJogo($event)"></app-painel>
+</div>
 
 <ng-template #fimDeJogo>
-  <div *ngIf="tipoEncerramento === 'perdeu'; else fimDeJogoVitoria">
+  <div *ngIf="tipoEncerramento === 'perdeu' else fimDeJogoVitoria">
+    <div class='jumbotron' align ="center">
     <h3>Game Over</h3>
+    </div>
+    </div>
+</ng-template>
 
 <ng-template #fimDeJogoVitoria>
+  <div class='jumbotron' align ="center">
   <h3>Vitória!</h3>
+  </div>
 </ng-template>
